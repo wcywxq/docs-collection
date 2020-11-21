@@ -1,9 +1,24 @@
+/*
+ * @Author: your name
+ * @Date: 2020-11-21 12:51:39
+ * @LastEditTime: 2020-11-21 17:43:28
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /blog-client/src/main.js
+ */
 import { createApp } from "vue";
+import ElementPlus from "element-plus";
+import "element-plus/lib/theme-chalk/index.css";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-createApp(App)
+createApp(App, {
+  config: {
+    devtools: true
+  }
+})
+  .use(ElementPlus)
   .use(store)
   .use(router)
   .mount("#app");
