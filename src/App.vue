@@ -1,3 +1,21 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-11-21 12:51:39
+ * @LastEditTime: 2020-11-23 23:19:01
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /blog-client/src/App.vue
+-->
 <template>
   <router-view />
 </template>
+<style lang="scss">
+body {
+  margin: 0;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+}
+</style>

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-11-21 17:04:32
- * @LastEditTime: 2020-11-22 23:11:23
+ * @LastEditTime: 2020-11-23 23:07:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /blog-client/src/layouts/BasicLayout.vue
@@ -9,7 +9,7 @@
 <template>
   <div class="basic-layout">
     <el-container>
-      <el-header>
+      <el-header class="header-box">
         <global-header />
       </el-header>
       <el-main>
@@ -26,10 +26,10 @@ export default {
   components: { GlobalHeader }
 };
 </script>
-
-<style lang="scss">
-.basic-layout {
-  margin: 0 auto;
-  max-width: 1080px;
+<style lang="scss" scoped>
+.header-box {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  height: 64px;
+  line-height: 64px;
 }
 </style>
