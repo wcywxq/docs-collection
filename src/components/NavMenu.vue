@@ -1,5 +1,5 @@
 <!--
- * @Author: your name
+ * @Author: magic
  * @Date: 2020-11-23 23:09:03
  * @LastEditTime: 2020-11-23 23:35:46
  * @LastEditors: Please set LastEditors
@@ -60,14 +60,34 @@ export default {
     transition: all 0.3s ease;
 
     &__active {
+      position: relative;
       color: #1bc3fb;
       background-color: rgba(27, 195, 251, 0.1);
+      transition: all 0.3s ease;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        background-color: #1bc3fb;
+        animation: showActiveLink 1s forwards;
+      }
     }
 
     &:hover {
       color: #1bc3fb;
       background-color: rgba(27, 195, 251, 0.1);
     }
+  }
+}
+@keyframes showActiveLink {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }
 </style>

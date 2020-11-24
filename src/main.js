@@ -1,5 +1,5 @@
 /*
- * @Author: your name
+ * @Author: magic
  * @Date: 2020-11-21 12:51:39
  * @LastEditTime: 2020-11-21 17:43:28
  * @LastEditors: Please set LastEditors
@@ -13,11 +13,10 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-createApp(App, {
-  config: {
-    devtools: true
-  }
-})
+const app = createApp(App);
+app.config.devtools = true;
+
+app
   .use(ElementPlus)
   .use(store)
   .use(router)
