@@ -12,7 +12,7 @@
       <el-header class="header-box">
         <global-header />
       </el-header>
-      <el-main>
+      <el-main class="content-box">
         <slot></slot>
       </el-main>
     </el-container>
@@ -31,5 +31,13 @@ export default {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   height: 64px;
   line-height: 64px;
+}
+.content-box {
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+}
+/deep/ .el-main {
+  padding: 20px 0;
 }
 </style>

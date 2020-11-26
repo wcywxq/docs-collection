@@ -10,16 +10,16 @@
   <div class="nav-menu">
     <el-row type="flex">
       <el-col
+        v-for="item in menuOptions"
+        :key="item.title"
         :class="{
           'nav-menu-item': true,
-          'nav-menu-item__active': active === key
+          'nav-menu-item__active': active === item.key
         }"
-        v-for="{ icon, title, key } in menuOptions"
-        :key="title"
-        @click="onChange(key)"
+        @click="onChange(item.key)"
       >
-        <i :class="icon" style="margin-right: 10px"></i>
-        <span>{{ title }}</span>
+        <i :class="item.icon" style="margin-right: 10px"></i>
+        <span>{{ item.title }}</span>
       </el-col>
     </el-row>
   </div>

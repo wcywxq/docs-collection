@@ -7,9 +7,18 @@
  * @FilePath: /blog-client/src/views/Home.vue
 -->
 <template>
-  <div>
-    首页
-  </div>
+  <el-row :gutter="20">
+    <el-col :span="16">
+      <el-card shadow="always">
+        left
+      </el-card>
+    </el-col>
+    <el-col :span="8">
+      <el-card shadow="always">
+        right
+      </el-card>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
