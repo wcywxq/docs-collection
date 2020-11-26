@@ -31,6 +31,7 @@ export default {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   height: 64px;
   line-height: 64px;
+  background-color: #ffffff;
 }
 .content-box {
   max-width: 1080px;

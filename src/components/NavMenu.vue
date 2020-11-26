@@ -26,7 +26,8 @@
 </template>
 
 <script>
-import { reactive, ref, toRefs } from "vue";
+import { reactive, ref, toRefs, watch, isReactive, isRef } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
 const menuList = [
   { icon: "el-icon-s-home", title: "回到主页", key: 0 },
@@ -37,6 +38,8 @@ const menuList = [
 
 export default {
   setup() {
+    const route = useRoute();
+    const router = useRouter();
     const state = reactive({
       menuOptions: [],
       active: 0
@@ -46,7 +49,41 @@ export default {
 
     const onChange = val => {
       state.active = val;
+      switch (val) {
+        case 0:
+          router.push("/home");
+          break;
+        case 1:
+          router.push("/category");
+          break;
+        case 2:
+          router.push("/tag");
+          break;
+        case 3:
+          router.push("/timeline");
+          break;
+      }
     };
+
+    watch(
+      () => route.path,
+      newVal => {
+        switch (newVal) {
+          case "/home":
+            state.active = 0;
+            break;
+          case "/category":
+            state.active = 1;
+            break;
+          case "/tag":
+            state.active = 2;
+            break;
+          case "/timeline":
+            state.active = 3;
+            break;
+        }
+      }
+    );
 
     return { ...toRefs(state), onChange };
   }

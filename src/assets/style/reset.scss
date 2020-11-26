@@ -1,0 +1,36 @@
+/*
+ * @Author: wangxq02
+ * @Date: 2020-11-11 14:58:56
+ * @LastEditTime: 2020-11-13 13:30:45
+ * @LastEditors: Please set LastEditors
+ * @Description: css reset
+ * @FilePath: /rcceye-h5/src/assets/styles/reset.scss
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+video {
+  background-color: #000;
+  border-radius: 6px;
+}
+
+img {
+  border-radius: 4px;
+}
+
+// 页面切换动画
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}

@@ -11,12 +11,28 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
   {
     path: "/",
+    redirect: "/home",
     component: () => import("../layouts/PageView"),
     children: [
       {
-        path: "/",
+        path: "/home",
         name: "首页",
         component: () => import("../views/home")
+      },
+      {
+        path: "/category",
+        name: "分类",
+        component: () => import("../views/category")
+      },
+      {
+        path: "/tag",
+        name: "标签",
+        component: () => import("../views/tag")
+      },
+      {
+        path: "/timeline",
+        name: "归档",
+        component: () => import("../views/timeline")
       }
     ]
   }
