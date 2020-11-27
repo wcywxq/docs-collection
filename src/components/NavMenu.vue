@@ -16,7 +16,7 @@
           'nav-menu-item': true,
           'nav-menu-item__active': active === item.key
         }"
-        @click="onChange(item.key)"
+        @click="handleClick(item)"
       >
         <i :class="item.icon" style="margin-right: 10px"></i>
         <span>{{ item.title }}</span>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { reactive, ref, toRefs, watch, isReactive, isRef } from "vue";
+import { reactive, ref, toRefs, watch, isReactive, isRef, computed } from "vue";
 import { useRoute, useRouter } from "vue-router";
 
 const menuList = [
@@ -41,51 +41,40 @@ export default {
     const route = useRoute();
     const router = useRouter();
     const state = reactive({
-      menuOptions: [],
-      active: 0
+      active: 0,
+      menuList
     });
-
-    state.menuOptions = menuList;
-
-    const onChange = val => {
-      state.active = val;
-      switch (val) {
-        case 0:
-          router.push("/home");
-          break;
-        case 1:
-          router.push("/category");
-          break;
-        case 2:
-          router.push("/tag");
-          break;
-        case 3:
-          router.push("/timeline");
-          break;
-      }
+    const menuOptions = computed(() =>
+      state.menuList.map(item => {
+        switch (item.key) {
+          case 0:
+            return { ...item, path: "/home" };
+          case 1:
+            return { ...item, path: "/category" };
+          case 2:
+            return { ...item, path: "/tag" };
+          case 3:
+            return { ...item, path: "/timeline" };
+        }
+      })
+    );
+    const handleClick = obj => {
+      console.log(obj);
+      state.active = obj.key;
+      router.push(obj.path);
     };
-
     watch(
       () => route.path,
       newVal => {
-        switch (newVal) {
-          case "/home":
-            state.active = 0;
-            break;
-          case "/category":
-            state.active = 1;
-            break;
-          case "/tag":
-            state.active = 2;
-            break;
-          case "/timeline":
-            state.active = 3;
-            break;
+        const target = menuOptions.value.find(item => item.path === newVal);
+        console.log(target, newVal);
+        if (target) {
+          state.active = target.key;
         }
       }
     );
 
-    return { ...toRefs(state), onChange };
+    return { ...toRefs(state), menuOptions, handleClick };
   }
 };
 </script>
