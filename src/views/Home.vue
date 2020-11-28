@@ -9,12 +9,10 @@
 <template>
   <el-row :gutter="20">
     <el-col :span="16">
-      <el-card shadow="always">
-        left
-      </el-card>
+      <article-list v-for="item in totalCount" :key="item" :item="item" />
     </el-col>
     <el-col :span="8">
-      <el-card shadow="always">
+      <el-card shadow="hover">
         right
       </el-card>
     </el-col>
@@ -22,5 +20,19 @@
 </template>
 
 <script>
-export default {};
+import { reactive, toRefs } from "vue";
+import ArticleList from "../components/ArticleList";
+
+const totalCount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+export default {
+  components: { ArticleList },
+  setup() {
+    const state = reactive({
+      totalCount
+    });
+
+    return { ...toRefs(state) };
+  }
+};
 </script>
