@@ -7,6 +7,14 @@
  * @FilePath: /rcceye-h5/src/assets/styles/utils.scss
  */
 
+.d-block {
+  display: block !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
 .d-flex {
   display: -webkit-box !important;
   display: -ms-flexbox !important;

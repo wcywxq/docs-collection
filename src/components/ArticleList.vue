@@ -1,15 +1,50 @@
 <template>
   <div class="article-list">
     <el-card shadow="hover">
-      <h2>
+      <h2 class="article-list-title">
         <a href="javascript:;">{{ item.title }}</a>
       </h2>
-      <p>{{ item.description }}</p>
-      <el-divider></el-divider>
-      <!--      <el-row>-->
-      <!--        -->
-      <!--      </el-row>-->
-      <!--      <i class="iconfont icontag"></i>-->
+      <div class="article-list-introduction">
+        <p>{{ item.description }}</p>
+      </div>
+      <el-divider />
+      <div class="article-list-meta">
+        <a href="javascript:;">
+          <i class="iconfont iconeye mr-1"></i>
+          <span class="mr-2">{{ item.watchCount }}</span>
+        </a>
+        <a href="javascript:;">
+          <i class="iconfont iconheart mr-1"></i>
+          <span class="mr-2">{{ item.likedCount }}</span>
+        </a>
+        <a href="javascript:;">
+          <i class="iconfont iconmessage mr-1"></i>
+          <span>{{ item.commentCount }}</span>
+        </a>
+      </div>
+      <el-row class="article-list-footer" type="flex" justify="space-between" align="middle">
+        <el-col :span="20" class="word-break-word">
+          <a class="d-inline-block mb-2 mr-2">
+            <i class="iconfont icontime-circle mr-1"></i>
+            <time>{{ item.createTime }}</time>
+          </a>
+          <a class="d-inline-block mb-2 mr-2">
+            <i class="iconfont iconfile-word mr-1"></i>
+            <span>{{ item.wordCount }}</span>
+          </a>
+          <a class="d-inline-block mb-2 mr-2">
+            <i class="iconfont iconshopping mr-1"></i>
+            <span>{{ item.category }}</span>
+          </a>
+          <a class="d-inline-block mb-2 mr-2" v-for="(tag, tagIndex) in item.tags" :key="tagIndex">
+            <i class="iconfont icontag mr-1"></i>
+            <span>{{ tag }}</span>
+          </a>
+        </el-col>
+        <el-col :span="4" class="text-right">
+          <a class="show-more" href="javascript:;">阅读全文</a>
+        </el-col>
+      </el-row>
     </el-card>
   </div>
 </template>
@@ -18,17 +53,52 @@
 export default {
   name: "ArticleList",
   props: {
-    item: Number
+    item: Object
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .article-list {
+  position: relative;
   margin-bottom: 20px;
 
-  .icontag {
-    color: #52c41a;
+  &-title {
+    font-weight: 500;
+    margin: 12px auto;
+    line-height: 1.4;
+
+    a {
+      color: var(--color-h1);
+    }
+  }
+
+  &-introduction {
+    p {
+      color: #666;
+    }
+  }
+
+  &-meta {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--color-meta);
+    font-size: 13px;
+
+    a {
+      color: var(--color-meta);
+    }
+  }
+
+  &-footer {
+    font-size: 13px;
+    color: var(--color-meta);
+    margin-bottom: 12px;
+  }
+
+  .show-more {
+    color: var(--color-primary);
   }
 }
 </style>

@@ -34,7 +34,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -47,7 +47,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -60,7 +60,20 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
+    tags: ["Angular", "JavaScript", "Java", "C", "C++", "Python", "Golang", "Rust", "Ruby", "Object-C", "Swift", "C#", "Kotlin"]
+  },
+  {
+    title: "SpringBoot开启事务、手动事务",
+    description:
+      "准确来说，我不是职业前端，因为需要使用 Angular 框架完成项目，所以顺带了解到了 NG-ZORRO 这套前端框架。整个过程处于边学习边使用的状态，主要的方式也是偏向于完成设计内容而非了解其实现原理。",
+    publishTime: "2020-11-21",
+    createTime: "2020-11-20",
+    wordCount: 1900,
+    watchCount: 163,
+    commentCount: 3,
+    likedCount: 5,
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -73,7 +86,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -86,7 +99,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -99,7 +112,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -112,7 +125,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -125,7 +138,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -138,7 +151,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -151,7 +164,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -164,7 +177,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -177,7 +190,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -190,7 +203,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -203,7 +216,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -216,7 +229,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -229,7 +242,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -242,7 +255,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -255,7 +268,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -268,7 +281,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -281,20 +294,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    categories: "前端",
-    tags: ["Angular", "JavaScript"]
-  },
-  {
-    title: "SpringBoot开启事务、手动事务",
-    description:
-      "准确来说，我不是职业前端，因为需要使用 Angular 框架完成项目，所以顺带了解到了 NG-ZORRO 这套前端框架。整个过程处于边学习边使用的状态，主要的方式也是偏向于完成设计内容而非了解其实现原理。",
-    publishTime: "2020-11-21",
-    createTime: "2020-11-20",
-    wordCount: 1900,
-    watchCount: 163,
-    commentCount: 3,
-    likedCount: 5,
-    categories: "前端",
+    category: "前端",
     tags: ["Angular", "JavaScript"]
   }
 ];
