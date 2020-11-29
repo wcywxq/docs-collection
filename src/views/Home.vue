@@ -7,13 +7,13 @@
  * @FilePath: /blog-client/src/views/Home.vue
 -->
 <template>
-  <el-row :gutter="20">
-    <el-col :span="16">
+  <el-row>
+    <el-col :span="18">
       <article-list v-for="(item, index) in totalCount" :key="index" :item="item" />
     </el-col>
-    <el-col :span="8">
+    <el-col :span="6" class="pl-4">
       <el-card shadow="hover">
-        right
+        <widget-notice />
       </el-card>
     </el-col>
   </el-row>
@@ -22,6 +22,7 @@
 <script>
 import { reactive, toRefs } from "vue";
 import ArticleList from "../components/ArticleList";
+import WidgetNotice from "../components/Widget/WidgetNotice";
 
 const totalCount = [
   {
@@ -34,7 +35,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -47,7 +48,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -60,7 +61,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript", "Java", "C", "C++", "Python", "Golang", "Rust", "Ruby", "Object-C", "Swift", "C#", "Kotlin"]
   },
   {
@@ -73,7 +74,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -86,7 +87,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -99,7 +100,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -112,7 +113,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -125,7 +126,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -138,7 +139,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -151,7 +152,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -164,7 +165,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -177,7 +178,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -190,7 +191,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -203,7 +204,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -216,7 +217,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -229,7 +230,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -242,7 +243,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -255,7 +256,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -268,7 +269,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -281,7 +282,7 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   },
   {
@@ -294,13 +295,13 @@ const totalCount = [
     watchCount: 163,
     commentCount: 3,
     likedCount: 5,
-    category: "前端",
+    categories: ["前端", "后端"],
     tags: ["Angular", "JavaScript"]
   }
 ];
 
 export default {
-  components: { ArticleList },
+  components: { WidgetNotice, ArticleList },
   setup() {
     const state = reactive({
       totalCount

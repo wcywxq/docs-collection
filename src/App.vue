@@ -8,4 +8,7 @@
 -->
 <template>
   <router-view />
+  <el-backtop :bottom="100">
+    <i class="iconfont iconarrowup"></i>
+  </el-backtop>
 </template>

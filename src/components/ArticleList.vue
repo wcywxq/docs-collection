@@ -22,7 +22,7 @@
           <span>{{ item.commentCount }}</span>
         </a>
       </div>
-      <el-row class="article-list-footer" type="flex" justify="space-between" align="middle">
+      <el-row class="article-list-footer" type="flex" justify="space-between">
         <el-col :span="20" class="word-break-word">
           <a class="d-inline-block mb-2 mr-2">
             <i class="iconfont icontime-circle mr-1"></i>
@@ -32,9 +32,9 @@
             <i class="iconfont iconfile-word mr-1"></i>
             <span>{{ item.wordCount }}</span>
           </a>
-          <a class="d-inline-block mb-2 mr-2">
+          <a class="d-inline-block mb-2 mr-2" v-for="(category, categoryIndex) in item.categories" :key="categoryIndex">
             <i class="iconfont iconshopping mr-1"></i>
-            <span>{{ item.category }}</span>
+            <span>{{ category }}</span>
           </a>
           <a class="d-inline-block mb-2 mr-2" v-for="(tag, tagIndex) in item.tags" :key="tagIndex">
             <i class="iconfont icontag mr-1"></i>
@@ -84,7 +84,6 @@ export default {
     right: 20px;
     top: 20px;
     color: var(--color-meta);
-    font-size: 13px;
 
     a {
       color: var(--color-meta);
@@ -92,7 +91,6 @@ export default {
   }
 
   &-footer {
-    font-size: 13px;
     color: var(--color-meta);
     margin-bottom: 12px;
   }
