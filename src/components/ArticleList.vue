@@ -42,7 +42,7 @@
           </a>
         </el-col>
         <el-col :span="4" class="text-right">
-          <a class="show-more" href="javascript:;">阅读全文</a>
+          <router-link :to="`/article/${item.id}`" class="show-more">阅读全文</router-link>
         </el-col>
       </el-row>
     </el-card>

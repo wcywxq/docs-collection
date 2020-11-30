@@ -1,7 +1,7 @@
 <!--
  * @Author: magic
  * @Date: 2020-11-23 23:09:03
- * @LastEditTime: 2020-11-23 23:35:46
+ * @LastEditTime: 2020-11-30 19:39:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /blog-client/src/components/NavMenu.vue
@@ -48,7 +48,7 @@ export default {
       state.menuList.map(item => {
         switch (item.key) {
           case 0:
-            return { ...item, path: "/home" };
+            return { ...item, path: "/" };
           case 1:
             return { ...item, path: "/category" };
           case 2:

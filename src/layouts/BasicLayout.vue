@@ -28,15 +28,18 @@ export default {
 </script>
 <style lang="scss" scoped>
 .header-box {
+  position: fixed;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
   height: 64px;
   line-height: 64px;
   background-color: #ffffff;
+  z-index: 999;
 }
 .content-box {
   max-width: 1080px;
   width: 100%;
-  margin: 0 auto;
+  margin: 64px auto 0;
 }
 /deep/ .el-main {
   padding: 20px 0;
