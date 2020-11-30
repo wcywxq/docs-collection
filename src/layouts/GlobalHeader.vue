@@ -12,10 +12,10 @@
       <el-col :span="6">
         lucifer 的网络博客
       </el-col>
-      <el-col :span="10" :offset="1">
+      <el-col :span="8" :offset="1">
         <nav-menu />
       </el-col>
-      <el-col :span="8" :offset="1">
+      <el-col :span="10" :offset="1">
         <search />
       </el-col>
     </el-row>

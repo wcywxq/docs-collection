@@ -1,13 +1,19 @@
 <template>
   <div class="widget-component">
-    <header>
-      <slot name="icon"></slot>
-      <i v-if="icon" :class="['iconfont', icon]"></i>
-      <span class="ml-2">{{ title }}</span>
-    </header>
-    <div class="content">
-      <slot></slot>
-    </div>
+    <el-card shadow="hover">
+      <header>
+        <template v-if="$slots.header">
+          <slot name="header"></slot>
+        </template>
+        <template v-else>
+          <i :class="['iconfont', iconClass]"></i>
+          <span class="ml-2">{{ title }}</span>
+        </template>
+      </header>
+      <div class="content word-break-all">
+        <slot></slot>
+      </div>
+    </el-card>
   </div>
 </template>
 
@@ -19,7 +25,7 @@ export default {
       type: String,
       default: "标题"
     },
-    icon: {
+    iconClass: {
       type: String,
       default: "iconwarning-circle"
     }
@@ -28,7 +34,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+/deep/ .el-card__body {
+  padding: 14px;
+}
+
 .widget-component {
+  margin-bottom: 20px;
+  color: var(--color-text);
+
   header {
     color: var(--color-primary);
   }

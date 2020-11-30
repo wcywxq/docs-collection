@@ -12,9 +12,9 @@
       <article-list v-for="(item, index) in totalCount" :key="index" :item="item" />
     </el-col>
     <el-col :span="6" class="pl-4">
-      <el-card shadow="hover">
-        <widget-notice />
-      </el-card>
+      <widget-notice />
+      <widget-statistics />
+      <widget-tag-cloud />
     </el-col>
   </el-row>
 </template>
@@ -23,6 +23,8 @@
 import { reactive, toRefs } from "vue";
 import ArticleList from "../components/ArticleList";
 import WidgetNotice from "../components/Widget/WidgetNotice";
+import WidgetStatistics from "../components/Widget/WidgetStatistics";
+import WidgetTagCloud from "../components/Widget/WidgetTagCloud";
 
 const totalCount = [
   {
@@ -301,7 +303,7 @@ const totalCount = [
 ];
 
 export default {
-  components: { WidgetNotice, ArticleList },
+  components: { WidgetTagCloud, WidgetStatistics, WidgetNotice, ArticleList },
   setup() {
     const state = reactive({
       totalCount

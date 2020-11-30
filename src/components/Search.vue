@@ -7,8 +7,8 @@
  * @FilePath: /blog-client/src/components/Search.vue
 -->
 <template>
-  <div class="search">
-    <el-input v-model="search" size="large" prefix-icon="el-icon-search" placeholder="搜索" clearable style="width: 100%"></el-input>
+  <div class="search text-right">
+    <el-input v-model="search" size="small" prefix-icon="el-icon-search" placeholder="搜索" clearable style="width: 240px;"></el-input>
   </div>
 </template>
 
@@ -30,10 +30,10 @@ export default {
 /deep/ .el-input {
   &:hover {
     input {
-      border-color: #1bc3fb;
+      border-color: var(--color-primary);
     }
     .el-input__icon {
-      color: #1bc3fb;
+      color: var(--color-primary);
       font-weight: bold;
     }
   }
@@ -44,11 +44,11 @@ export default {
     background: #f4f4f4;
 
     &:focus {
-      border-color: #1bc3fb;
+      border-color: var(--color-primary);
       background: rgba(27, 195, 251, 0.15);
       + .el-input__prefix {
         > .el-input__icon {
-          color: #1bc3fb;
+          color: var(--color-primary);
           font-weight: bold;
         }
       }
