@@ -1,0 +1,22 @@
+{
+  "name": "tmp",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "concurrently 'turbo dev'",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "clean": "find . \\( -type d -name 'node_modules' -o -type d -name 'dist' \\) -exec rm -rf {} +"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.5",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
+  }
+}
